@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- TODO: update name + one-line description for search engines / link previews -->
+  <title>Tania — UX / UI Designer</title>
+  <meta name="description" content="Tania is a UX/UI designer crafting clear, human-centered digital products. See selected work and case studies." />
+  <meta name="author" content="Tania" />
+
+  <!-- Open Graph (nice link previews when shared on LinkedIn etc.) -->
+  <meta property="og:title" content="Tania — UX / UI Designer" />
+  <meta property="og:description" content="Clear, human-centered digital product design." />
+  <meta property="og:type" content="website" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/styles.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- ============ Header / nav ============ -->
+  <header class="site-header">
+    <div class="container nav">
+      <a class="nav__brand" href="index.html">Tania<span class="dot">.</span></a>
+
+      <ul class="nav__links" id="nav-links">
+        <li><a href="index.html#work">Work</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+      </ul>
+
+      <div class="nav__right">
+        <button class="theme-toggle" type="button" aria-label="Switch to dark mode" aria-pressed="false">
+          <svg class="icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+          <svg class="icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+        </button>
+        <button class="nav__toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="nav-links">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- ============ Hero ============ -->
+    <section class="hero">
+      <div class="container hero__inner reveal">
+        <!-- TODO: replace with a real photo → assets/img/tania.jpg -->
+        <img class="avatar" src="assets/img/avatar.svg" alt="Portrait of Tania" width="96" height="96" />
+        <span class="eyebrow">UX / UI Designer · Available for work</span>
+        <h1 class="text-balance">Designing digital products that feel <span class="accent">effortless</span>.</h1>
+        <p class="lead hero__lead">
+          <!-- TODO: personalize this intro in her own voice -->
+          I'm Tania — a UX/UI designer who turns messy problems into clean, usable
+          interfaces. Recently trained through the ITSCHOOL program, now building
+          my craft one thoughtful project at a time.
+        </p>
+        <div class="hero__actions">
+          <a class="btn btn--primary" href="index.html#work">View my work <span class="arrow" aria-hidden="true">→</span></a>
+          <a class="btn btn--ghost" href="about.html">About me</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ Selected work ============ -->
+    <section class="section" id="work">
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <span class="eyebrow">Selected work</span>
+            <h2>Two projects, start to finish.</h2>
+          </div>
+          <p class="muted">A look at how I think — research, wireframes, and the final UI. More on the way.</p>
+        </div>
+
+        <div class="work-grid">
+          <!-- Project 1 -->
+          <a class="card reveal" href="work/project-one.html">
+            <!-- TODO: swap gradient for real cover → <img src="assets/img/project-one-cover.jpg" alt="..."> -->
+            <div class="card__media card__media--placeholder grad-1">Project One</div>
+            <div class="card__body">
+              <div class="card__tags">
+                <span class="tag">Mobile app</span>
+                <span class="tag">UX &amp; UI</span>
+                <span class="tag">Figma</span>
+              </div>
+              <h3>Project One — a friendlier way to [do something]</h3>
+              <p class="muted">A concept mobile app designed to make [task] simpler for [audience]. From user flows to a polished UI kit.</p>
+              <span class="card__link">Read case study <span class="arrow" aria-hidden="true">→</span></span>
+            </div>
+          </a>
+
+          <!-- Project 2 -->
+          <a class="card reveal" href="work/project-two.html">
+            <div class="card__media card__media--placeholder grad-2">Project Two</div>
+            <div class="card__body">
+              <div class="card__tags">
+                <span class="tag">Web app</span>
+                <span class="tag">Redesign</span>
+                <span class="tag">Figma</span>
+              </div>
+              <h3>Project Two — rethinking the [experience]</h3>
+              <p class="muted">A redesign concept focused on clarity and flow. Explored the problem, tested ideas, and shipped a cohesive interface.</p>
+              <span class="card__link">Read case study <span class="arrow" aria-hidden="true">→</span></span>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ About teaser ============ -->
+    <section class="section section--tight">
+      <div class="container">
+        <div class="cta reveal" style="text-align:left; display:grid; gap:1.5rem;">
+          <div>
+            <span class="eyebrow">A little about me</span>
+            <h2 class="text-balance">New to the industry, serious about the craft.</h2>
+          </div>
+          <p class="lead" style="max-width:46rem; margin:0;">
+            I recently completed an intensive UX/UI course with ITSCHOOL and I'm channelling
+            everything I've learned into real, considered work. I care about accessible
+            design, tidy design systems, and interfaces that respect people's time.
+          </p>
+          <div class="hero__actions">
+            <a class="btn btn--ghost" href="about.html">Read my story <span class="arrow" aria-hidden="true">→</span></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ Contact ============ -->
+    <section class="section" id="contact">
+      <div class="container">
+        <div class="cta reveal">
+          <span class="eyebrow">Get in touch</span>
+          <h2 class="text-balance">Have a project, role, or just want to say hi?</h2>
+          <p class="lead">I'm open to junior roles, internships, and freelance briefs. The fastest way to reach me is email.</p>
+          <div class="cta__actions">
+            <!-- TODO: real email address -->
+            <a class="btn btn--primary" href="mailto:hello@example.com">Email me <span class="arrow" aria-hidden="true">→</span></a>
+            <!-- TODO: real LinkedIn URL -->
+            <a class="btn btn--ghost" href="https://linkedin.com/in/your-handle" target="_blank" rel="noopener">LinkedIn</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============ Footer ============ -->
+  <footer class="site-footer">
+    <div class="container">
+      <p class="muted">© <span data-year>2026</span> Tania · UX/UI Designer</p>
+      <ul class="footer-links">
+        <li><a href="index.html#work">Work</a></li>
+        <li><a href="about.html">About</a></li>
+        <!-- TODO: real links -->
+        <li><a href="mailto:hello@example.com">Email</a></li>
+        <li><a href="https://linkedin.com/in/your-handle" target="_blank" rel="noopener">LinkedIn</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
