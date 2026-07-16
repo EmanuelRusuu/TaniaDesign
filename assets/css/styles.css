@@ -7,21 +7,22 @@
 
 /* ---------- 1. Design tokens ---------- */
 :root {
-  /* Brand — change --accent to recolor the entire site */
-  --accent:            #5b4be1;   /* violet-indigo */
-  --accent-soft:       #ece9fc;   /* faint tint for backgrounds */
-  --accent-contrast:   #ffffff;   /* text/icons sitting on the accent */
+  /* Brand — Tania's palette (#202A2C / #828C8D / #AFC8CB / #FFFFFF) */
+  --accent:            #4c7377;   /* teal, from #AFC8CB darkened for legible text */
+  --accent-soft:       #eaf1f1;   /* faint teal tint for backgrounds */
+  --accent-contrast:   #ffffff;   /* text/icons sitting on --ink buttons */
+  --ink:               #202a2c;   /* near-black — primary buttons & strong text */
 
   /* Surfaces & text (light theme) */
-  --bg:                #fbfbf9;   /* warm off-white page background */
-  --surface:           #ffffff;   /* cards, elevated blocks */
-  --text:              #17171a;   /* near-black headings/body */
-  --text-muted:        #6b6b72;   /* secondary text */
-  --border:            #e7e7e2;   /* hairline dividers */
+  --bg:                #ffffff;   /* page background */
+  --surface:           #f4f7f7;   /* cards, elevated blocks (soft teal-gray) */
+  --text:              #202a2c;   /* near-black headings/body */
+  --text-muted:        #66716f;   /* secondary text (AA-legible gray) */
+  --border:            #e4eaea;   /* hairline dividers */
 
   /* Typography */
-  --font-display: "Space Grotesk", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
-  --font-body:    "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --font-display: "Jost", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-body:    "Mulish", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
 
   /* Fluid type scale (clamp = scales smoothly between phone & desktop) */
   --step--1: clamp(0.83rem, 0.78rem + 0.2vw, 0.94rem);
@@ -45,14 +46,15 @@
 
 /* Dark theme — applied when <html data-theme="dark"> */
 [data-theme="dark"] {
-  --accent:          #9b8dff;
-  --accent-soft:     #211d3a;
-  --accent-contrast: #10101a;
-  --bg:              #0e0e11;
-  --surface:         #17171b;
-  --text:            #f4f4f2;
-  --text-muted:      #9d9da6;
-  --border:          #26262b;
+  --accent:          #afc8cb;
+  --accent-soft:     #263130;
+  --accent-contrast: #16201f;
+  --ink:             #e7efef;
+  --bg:              #141d1c;
+  --surface:         #1c2726;
+  --text:            #eef3f3;
+  --text-muted:      #9fabaa;
+  --border:          #2c3837;
   --shadow: 0 1px 2px rgba(0, 0, 0, .3),
             0 8px 30px rgba(0, 0, 0, .35);
 }
@@ -143,7 +145,7 @@ img, svg { display: block; max-width: 100%; height: auto; }
 }
 .btn:hover { transform: translateY(-2px); }
 .btn:active { transform: translateY(0); }
-.btn--primary { background: var(--accent); color: var(--accent-contrast); }
+.btn--primary { background: var(--ink); color: var(--accent-contrast); }
 .btn--primary:hover { box-shadow: var(--shadow); }
 .btn--ghost { background: transparent; color: var(--text); border-color: var(--border); }
 .btn--ghost:hover { border-color: var(--accent); color: var(--accent); }
@@ -308,6 +310,9 @@ img, svg { display: block; max-width: 100%; height: auto; }
 .grad-1 { background: linear-gradient(135deg, #6a5cff, #b06cff); }
 .grad-2 { background: linear-gradient(135deg, #ff8a5c, #ff5c9d); }
 .grad-3 { background: linear-gradient(135deg, #34d1bf, #3b82f6); }
+/* Invome brand placeholder — dark, elegant (swap for a real mockup shot) */
+.cover-invome { background: linear-gradient(140deg, #202a2c 0%, #3b4a4c 55%, #6d8385 100%); }
+.cover-soon   { background: var(--surface); color: var(--text-muted); border: 1px dashed var(--border); }
 
 /* ---------- 8. About page ---------- */
 .about-grid {
@@ -414,6 +419,7 @@ img, svg { display: block; max-width: 100%; height: auto; }
   margin-block: 2rem;
 }
 .figure__frame {
+  position: relative;
   border: 1px solid var(--border);
   border-radius: var(--radius);
   overflow: hidden;
@@ -422,7 +428,11 @@ img, svg { display: block; max-width: 100%; height: auto; }
   display: grid;
   place-items: center;
   color: var(--text-muted);
+  text-align: center;
+  padding: 1rem;
 }
+/* A real screenshot, when present, covers the fallback caption behind it */
+.figure__frame img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
 .figure figcaption {
   margin-top: 0.75rem;
   font-size: var(--step--1);

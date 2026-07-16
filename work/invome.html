@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Invome — Case Study · Tania Rusu</title>
+  <meta name="description" content="Invome — a mobile app that helps people organize, find, and track the items they store at home. UX research, UX & UI design case study by Tania Rusu." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600;700&family=Mulish:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../assets/css/styles.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="container nav">
+      <a class="nav__brand" href="../index.html">Tania Rusu<span class="dot">.</span></a>
+      <ul class="nav__links" id="nav-links">
+        <li><a href="../index.html#work">Work</a></li>
+        <li><a href="../about.html">About</a></li>
+        <li><a href="../index.html#contact">Contact</a></li>
+      </ul>
+      <div class="nav__right">
+        <button class="theme-toggle" type="button" aria-label="Switch to dark mode" aria-pressed="false">
+          <svg class="icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+          <svg class="icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+        </button>
+        <button class="nav__toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="nav-links">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <article>
+      <section class="case-hero">
+        <div class="container">
+          <a class="back-link" href="../index.html#work"><span aria-hidden="true">←</span> Back to work</a>
+          <div style="max-width:46rem;">
+            <span class="eyebrow">Case study · Mobile app</span>
+            <h1 class="text-balance">Invome — a calmer way to organize everything you store at home.</h1>
+            <p class="lead" style="margin-top:1rem;">
+              A mobile app that helps people organize their belongings by location, find them
+              instantly with QR codes, and keep track of what they've lent out or forgotten.
+            </p>
+          </div>
+
+          <!-- Shows invome-cover.jpg once added to assets/img/, else the branded placeholder -->
+          <div class="case-cover cover-invome">
+            <span>INVOME</span>
+            <img src="../assets/img/invome-cover.jpg" alt="Invome app — key screens" onerror="this.remove()">
+          </div>
+
+          <dl class="meta-grid">
+            <div><dt>My role</dt><dd>UX Research · UX Design · UI Design</dd></div>
+            <div><dt>Timeline</dt><dd>3 months</dd></div>
+            <div><dt>Tools</dt><dd>Figma, FigJam, Typeform, Miro</dd></div>
+            <div><dt>Type</dt><dd>Self-directed concept</dd></div>
+          </dl>
+        </div>
+      </section>
+
+      <section class="section" style="padding-top:0;">
+        <div class="container">
+          <div class="case-body">
+
+            <section>
+              <h2>The problem</h2>
+              <p>
+                Many people struggle to keep track of the things they store at home. As the number
+                of items grows, it gets harder to remember where they are, what they're worth, or
+                who they were lent to.
+              </p>
+              <p>
+                Without a system, that means wasted time, frustration, and inefficient management
+                of personal belongings.
+              </p>
+              <div class="callout">
+                <strong>Design question:</strong> How might we help people organize, find, and keep
+                track of their stored items with as little effort as possible?
+              </div>
+            </section>
+
+            <section>
+              <h2>Why I chose this problem</h2>
+              <p>
+                I picked this topic because it's something I kept noticing around me and experiencing
+                myself. I wanted to design a practical solution that simplifies organizing items and
+                cuts down the time spent searching for them.
+              </p>
+              <h3 style="font-size:var(--step-1); margin-top:1.5rem;">My role</h3>
+              <p>
+                I ran the whole design process — from research and defining the problem, through
+                designing the user experience, to building the final interface.
+              </p>
+            </section>
+
+            <section>
+              <h2>Research</h2>
+              <p>
+                To understand how people actually behave, I ran interviews and a survey, then
+                synthesized the findings into a <strong>User Persona</strong> and a
+                <strong>Customer Journey Map</strong>.
+              </p>
+
+              <h3 style="font-size:var(--step-1); margin:1.75rem 0 0.5rem;">Key insights</h3>
+              <ul>
+                <li><strong>100%</strong> of participants have a dedicated storage space.</li>
+                <li><strong>75%</strong> store more than 50 items.</li>
+                <li><strong>75%</strong> regularly spend time looking for their belongings.</li>
+                <li>Everyone found a <strong>QR-code labeling</strong> system useful.</li>
+                <li>Everyone valued being able to <strong>track the value</strong> of stored items.</li>
+              </ul>
+
+              <figure class="figure">
+                <div class="figure__frame">
+                  <span>Research artifact — User Persona / Customer Journey Map<br><em>(add: assets/img/invome-research.jpg)</em></span>
+                  <img src="../assets/img/invome-research.jpg" alt="User persona and customer journey map for Invome" onerror="this.remove()">
+                </div>
+                <figcaption>User persona and journey map from the discovery phase.</figcaption>
+              </figure>
+            </section>
+
+            <section>
+              <h2>The solution</h2>
+              <p>
+                I designed an app that lets people organize items by <strong>locations and
+                sub-locations</strong>, and find them fast through search and by
+                <strong>scanning QR codes</strong> attached to their storage boxes.
+              </p>
+              <p>
+                It also helps people <strong>track borrowed items</strong>, estimate the
+                <strong>value</strong> of their belongings, and get <strong>notifications</strong>
+                for things they've forgotten or stopped using.
+              </p>
+            </section>
+
+            <section>
+              <h2>Design process</h2>
+              <p>Moving from problem to structure, and from structure to a polished interface.</p>
+
+              <figure class="figure">
+                <div class="figure__frame">
+                  <span>Sitemap<br><em>(add: assets/img/invome-sitemap.jpg)</em></span>
+                  <img src="../assets/img/invome-sitemap.jpg" alt="Invome sitemap" onerror="this.remove()">
+                </div>
+                <figcaption>Sitemap — the app's overall structure.</figcaption>
+              </figure>
+
+              <figure class="figure">
+                <div class="figure__frame">
+                  <span>User flow<br><em>(add: assets/img/invome-userflow.jpg)</em></span>
+                  <img src="../assets/img/invome-userflow.jpg" alt="Invome user flow" onerror="this.remove()">
+                </div>
+                <figcaption>User flow — the core path from opening the app to finding an item.</figcaption>
+              </figure>
+
+              <figure class="figure">
+                <div class="figure__frame">
+                  <span>Low-fidelity wireframes<br><em>(add: assets/img/invome-wireframes.jpg)</em></span>
+                  <img src="../assets/img/invome-wireframes.jpg" alt="Invome wireframes" onerror="this.remove()">
+                </div>
+                <figcaption>Low-fidelity wireframes exploring layout and hierarchy.</figcaption>
+              </figure>
+            </section>
+
+            <section>
+              <h2>Final UI</h2>
+              <p>
+                The final interface is minimalist by design — reducing cognitive load so people can
+                find the information that matters quickly.
+              </p>
+              <figure class="figure">
+                <div class="figure__frame">
+                  <span>High-fidelity screens<br><em>(add: assets/img/invome-ui.jpg)</em></span>
+                  <img src="../assets/img/invome-ui.jpg" alt="Invome high-fidelity screens" onerror="this.remove()">
+                </div>
+                <figcaption>Final UI — key screens from the flow.</figcaption>
+              </figure>
+              <figure class="figure">
+                <div class="figure__frame">
+                  <span>Design system — colors, type, components<br><em>(add: assets/img/invome-system.jpg)</em></span>
+                  <img src="../assets/img/invome-system.jpg" alt="Invome design system" onerror="this.remove()">
+                </div>
+                <figcaption>The building blocks: color palette, typography, and components.</figcaption>
+              </figure>
+            </section>
+
+            <section>
+              <h2>Design decisions</h2>
+              <p>
+                I chose a minimalist interface to reduce cognitive load and help people find important
+                information quickly. The color palette, typography, and components were chosen to create
+                a clear, consistent, and easy-to-use experience.
+              </p>
+            </section>
+
+            <section>
+              <h2>Outcome</h2>
+              <p>
+                The project resulted in a complete prototype of the app that validates the concept and
+                demonstrates the entire design process — from identifying the problem to the final
+                solution.
+              </p>
+              <p style="margin-top:1.25rem;">
+                <a class="btn btn--primary" href="https://www.figma.com/design/8Cen0mtezdG7KxzMo5sfXI/INVOME?node-id=371-3804&t=z7QONHHQ0D2nwoRN-1" target="_blank" rel="noopener">View the Figma file <span class="arrow" aria-hidden="true">→</span></a>
+              </p>
+            </section>
+
+            <section>
+              <h2>What I learned</h2>
+              <p>
+                This project helped me understand that a successful digital product isn't defined by how
+                it looks alone, but above all by the experience it gives the user.
+              </p>
+              <p>
+                I learned how important research is when making design decisions, and how choices around
+                color, visual hierarchy, and structure shape the user's perception from the very first
+                seconds of interaction.
+              </p>
+              <p>
+                I also understood that simplicity doesn't mean a lack of functionality — it means removing
+                the elements that create confusion or frustration.
+              </p>
+            </section>
+
+            <section>
+              <h2>What I'd improve</h2>
+              <p>
+                If I continued developing the project, I'd run additional usability testing sessions to
+                validate the proposed solutions and iterate on the interface based on the feedback. I'd
+                also extend the app's functionality and refine certain screens to further improve the
+                experience.
+              </p>
+            </section>
+
+          </div>
+        </div>
+      </section>
+
+      <nav class="next-project">
+        <div class="container">
+          <span class="muted">More work</span>
+          <a href="../index.html#work"><h3>Back to all projects →</h3></a>
+        </div>
+      </nav>
+    </article>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p class="muted">© <span data-year>2026</span> Tania Rusu · UI/UX Designer</p>
+      <ul class="footer-links">
+        <li><a href="../index.html#work">Work</a></li>
+        <li><a href="../about.html">About</a></li>
+        <li><a href="mailto:taniadrusu@gmail.com">Email</a></li>
+        <li><a href="https://www.linkedin.com/in/tania-denisa-rusu/" target="_blank" rel="noopener">LinkedIn</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <script src="../assets/js/main.js"></script>
+</body>
+</html>

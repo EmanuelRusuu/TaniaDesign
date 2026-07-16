@@ -3,12 +3,12 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>About — Tania, UX / UI Designer</title>
-  <meta name="description" content="About Tania — a junior UX/UI designer trained through ITSCHOOL, focused on accessible, human-centered design." />
+  <title>About — Tania Rusu, UI/UX Designer</title>
+  <meta name="description" content="Tania Rusu — a UI/UX designer based in Cluj-Napoca, trained through IT School, focused on clean, intuitive, human-centered design." />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600;700&family=Mulish:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="assets/css/styles.css" />
 </head>
 <body>
@@ -16,7 +16,7 @@
 
   <header class="site-header">
     <div class="container nav">
-      <a class="nav__brand" href="index.html">Tania<span class="dot">.</span></a>
+      <a class="nav__brand" href="index.html">Tania Rusu<span class="dot">.</span></a>
       <ul class="nav__links" id="nav-links">
         <li><a href="index.html#work">Work</a></li>
         <li><a href="about.html" aria-current="page">About</a></li>
@@ -39,17 +39,18 @@
       <div class="container">
         <div class="reveal" style="max-width:46rem; margin-bottom:3rem;">
           <span class="eyebrow">About</span>
-          <h1 class="text-balance">Hi, I'm Tania — a UX/UI designer at the very start of a career I'm all-in on.</h1>
+          <h1 class="text-balance">Hi, I'm Tania — a UI/UX designer at the start of a career I'm all-in on.</h1>
         </div>
 
         <div class="about-grid">
           <!-- Sidebar -->
           <aside class="about-aside reveal">
-            <!-- TODO: real photo → assets/img/tania.jpg -->
-            <img class="avatar" src="assets/img/avatar.svg" alt="Portrait of Tania" width="160" height="160" />
+            <!-- Shows tania.jpg once added to assets/img/, else the placeholder -->
+            <img class="avatar" src="assets/img/tania.jpg"
+                 onerror="this.onerror=null;this.src='assets/img/avatar.svg'"
+                 alt="Portrait of Tania Rusu" width="160" height="160" />
             <div>
-              <!-- TODO: location -->
-              <p class="muted" style="margin-bottom:0.25rem;">📍 [City, Country]</p>
+              <p class="muted" style="margin-bottom:0.25rem;">📍 Cluj-Napoca, Romania</p>
               <p class="muted">Open to junior &amp; internship roles</p>
             </div>
             <div>
@@ -57,60 +58,58 @@
               <ul class="pill-list">
                 <li>Figma</li>
                 <li>FigJam</li>
-                <li>Prototyping</li>
-                <li>Design systems</li>
-                <!-- TODO: add/remove tools she actually uses -->
-                <li>Photoshop</li>
+                <li>Miro</li>
+                <li>Typeform</li>
               </ul>
             </div>
-            <!-- TODO: link a real CV/PDF, or remove this button -->
-            <a class="btn btn--ghost" href="#" style="justify-content:center;">Download CV</a>
+            <a class="btn btn--primary" href="mailto:taniadrusu@gmail.com" style="justify-content:center;">Get in touch</a>
           </aside>
 
           <!-- Main prose -->
           <div class="prose reveal">
             <h3>My story</h3>
             <p>
-              I came to design because I love the moment a confusing screen suddenly
-              makes sense. After completing an intensive UX/UI program with
-              <strong>ITSCHOOL</strong>, I've been sharpening my process on
-              self-directed projects — the two case studies you'll find in my
-              <a href="index.html#work" style="color:var(--accent);">work</a>.
+              I'm a UI/UX designer at the start of my career, with a background in Business
+              Information Systems at <strong>Babeș-Bolyai University (FSEGA)</strong>. I discovered
+              my interest in digital interface design during a front-end project there — and the
+              feedback I got made me realize I'm drawn not just to the technical side, but to how
+              design shapes the experience people have with a product.
             </p>
             <p>
-              <!-- TODO: personalize — where she's coming from, what drew her in -->
-              I don't have years of agency experience yet, and I think that's a
-              strength right now: I ask a lot of questions, I sweat the details, and
-              I'm genuinely excited to learn from a team.
+              I'm passionate about design, psychology, and the way people interact with digital
+              products. I love creating clean, intuitive, easy-to-use interfaces that solve real
+              problems and feel good to use.
+            </p>
+            <p>
+              I believe good design isn't just a product that looks good — it's one that helps
+              people reach their goals without effort or frustration.
             </p>
 
             <h3>What I do</h3>
-            <p>I take a product from fuzzy idea to a clear, buildable interface:</p>
+            <p>I take a product from a fuzzy idea to a clear, buildable interface:</p>
             <ul>
-              <li><strong>Research &amp; discovery</strong> — user interviews, competitive teardowns, defining the real problem.</li>
-              <li><strong>Structure</strong> — user flows, information architecture, low-fi wireframes.</li>
-              <li><strong>Interface</strong> — high-fidelity UI, reusable components, and tidy design systems in Figma.</li>
-              <li><strong>Prototype &amp; test</strong> — clickable prototypes to validate ideas before a line of code is written.</li>
+              <li><strong>Research &amp; discovery</strong> — interviews, surveys, and synthesis with personas &amp; journey maps.</li>
+              <li><strong>Structure</strong> — user flows, information architecture, and wireframes.</li>
+              <li><strong>Interface</strong> — high-fidelity UI and consistent design systems in Figma.</li>
+              <li><strong>Prototype &amp; test</strong> — clickable prototypes and usability testing to validate ideas.</li>
             </ul>
 
-            <h3>How I got here</h3>
+            <h3>Education &amp; training</h3>
             <ul class="timeline">
               <li>
                 <p class="when">2024 — Present</p>
-                <p class="what">Self-directed UX/UI projects</p>
-                <p class="muted">Building a portfolio of end-to-end case studies to grow my craft.</p>
+                <p class="what">Self-directed UI/UX projects</p>
+                <p class="muted">Building my portfolio through personal projects and case studies, applying the full process from research to prototyping and final design.</p>
               </li>
               <li>
-                <!-- TODO: correct dates -->
-                <p class="when">2024</p>
-                <p class="what">UX/UI Design Course — ITSCHOOL</p>
-                <p class="muted">Intensive training in user-centered design, Figma, prototyping, and design systems.</p>
+                <p class="when">September 2024 — December 2024</p>
+                <p class="what">UI/UX Design Course — IT School</p>
+                <p class="muted">Intensive program covering the full design process: UX research, user flows, information architecture, wireframing, prototyping in Figma, UI design, design systems, usability testing, and a complete portfolio project.</p>
               </li>
               <li>
-                <!-- TODO: previous background — studies or prior work, or delete this entry -->
-                <p class="when">Earlier</p>
-                <p class="what">[Previous background]</p>
-                <p class="muted">The experience that led me toward design.</p>
+                <p class="when">University</p>
+                <p class="what">BSc, Business Information Systems — Babeș-Bolyai University</p>
+                <p class="muted">Faculty of Economics and Business Administration (FSEGA), specialization in Business Information Systems (Informatică Economică).</p>
               </li>
             </ul>
           </div>
@@ -123,10 +122,10 @@
         <div class="cta reveal">
           <span class="eyebrow">Get in touch</span>
           <h2 class="text-balance">Let's build something people enjoy using.</h2>
-          <p class="lead">I'd love to hear about your team or project.</p>
+          <p class="lead">I'm open to junior roles, internships, and freelance briefs. Email is the fastest way to reach me.</p>
           <div class="cta__actions">
-            <a class="btn btn--primary" href="mailto:hello@example.com">Email me <span class="arrow" aria-hidden="true">→</span></a>
-            <a class="btn btn--ghost" href="https://linkedin.com/in/your-handle" target="_blank" rel="noopener">LinkedIn</a>
+            <a class="btn btn--primary" href="mailto:taniadrusu@gmail.com">Email me <span class="arrow" aria-hidden="true">→</span></a>
+            <a class="btn btn--ghost" href="https://www.linkedin.com/in/tania-denisa-rusu/" target="_blank" rel="noopener">LinkedIn</a>
           </div>
         </div>
       </div>
@@ -135,12 +134,12 @@
 
   <footer class="site-footer">
     <div class="container">
-      <p class="muted">© <span data-year>2026</span> Tania · UX/UI Designer</p>
+      <p class="muted">© <span data-year>2026</span> Tania Rusu · UI/UX Designer</p>
       <ul class="footer-links">
         <li><a href="index.html#work">Work</a></li>
         <li><a href="about.html">About</a></li>
-        <li><a href="mailto:hello@example.com">Email</a></li>
-        <li><a href="https://linkedin.com/in/your-handle" target="_blank" rel="noopener">LinkedIn</a></li>
+        <li><a href="mailto:taniadrusu@gmail.com">Email</a></li>
+        <li><a href="https://www.linkedin.com/in/tania-denisa-rusu/" target="_blank" rel="noopener">LinkedIn</a></li>
       </ul>
     </div>
   </footer>
