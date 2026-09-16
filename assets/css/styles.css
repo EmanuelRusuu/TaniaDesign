@@ -470,6 +470,55 @@ img, svg { display: block; max-width: 100%; height: auto; }
   text-align: center;
 }
 
+.figure__zoom {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  cursor: zoom-in;
+}
+
+.img-dialog {
+  padding: 0;
+  border: 0;
+  background: transparent;
+  max-width: calc(100vw - 2rem);
+  max-height: calc(100vh - 5.5rem);
+}
+.img-dialog::backdrop {
+  background: rgba(20, 22, 26, 0.82);
+}
+.img-dialog img {
+  display: block;
+  position: static;
+  width: auto;
+  height: auto;
+  max-width: min(96vw, 1400px);
+  max-height: calc(100vh - 5.5rem);
+  object-fit: contain;
+  border-radius: var(--radius);
+}
+.img-dialog__exit {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  z-index: 1;
+  min-width: 5.5rem;
+  padding: 0.65rem 1.15rem;
+  border: 0;
+  border-radius: 999px;
+  background: #fff;
+  color: #111;
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+}
+.img-dialog__exit:hover {
+  background: #f0f0f0;
+}
+
 .callout {
   background: var(--accent-soft);
   border-radius: var(--radius);

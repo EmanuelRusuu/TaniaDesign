@@ -183,16 +183,36 @@
               <figure class="figure">
                 <div class="figure__frame">
                   <span>Sitemap<br><em>(add: assets/img/invome-sitemap.jpg)</em></span>
-                  <a href="../assets/img/Site map.png" target="_blank" rel="noopener" style="position:absolute;inset:0;z-index:1;cursor:zoom-in;" title="Open full sitemap">
+                  <button type="button" class="figure__zoom" aria-haspopup="dialog" aria-controls="invome-sitemap-dialog">
                     <img
                       src="../assets/img/Site map.png"
                       alt="Invome sitemap"
                       onerror="this.parentElement.remove()"
                     >
-                  </a>
+                  </button>
                 </div>
+                <dialog id="invome-sitemap-dialog" class="img-dialog" aria-label="Invome sitemap">
+                  <form method="dialog">
+                    <button type="submit" class="img-dialog__exit" value="close">Exit</button>
+                  </form>
+                  <img src="../assets/img/Site map.png" alt="Invome sitemap, full size">
+                </dialog>
                 <figcaption>Sitemap — the app's overall structure.</figcaption>
               </figure>
+              <script>
+                (function () {
+                  var figure = document.currentScript.previousElementSibling;
+                  var dialog = figure.querySelector("dialog");
+                  var trigger = figure.querySelector(".figure__zoom");
+                  if (!dialog || !trigger) return;
+                  trigger.addEventListener("click", function () {
+                    dialog.showModal();
+                  });
+                  dialog.addEventListener("click", function (e) {
+                    if (e.target === dialog) dialog.close();
+                  });
+                })();
+              </script>
 
               <figure class="figure">
                 <div class="figure__frame">
