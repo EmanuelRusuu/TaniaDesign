@@ -183,8 +183,168 @@
               <figure class="figure">
                 <div class="figure__frame">
                   <span>Sitemap<br><em>(add: assets/img/invome-sitemap.jpg)</em></span>
-                  <img src="../assets/img/Site map.png" alt="Invome sitemap" onerror="this.remove()">
+                  <img 
+                    src="../assets/img/Site map.png" 
+                    alt="Invome sitemap" 
+                    class="lightbox-target"
+                    style="cursor: zoom-in;"
+                    onerror="this.remove()"
+                  >
                 </div>
+                <style>
+                  .lightbox-overlay {
+                    position: fixed;
+                    z-index: 9999;
+                    top: 0;
+                    left: 0;
+                    width: 100vw;
+                    height: 100vh;
+                    background: rgba(30, 32, 38, 0.75);
+                    backdrop-filter: blur(3px);
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    opacity: 0;
+                    pointer-events: none;
+                    transition: opacity 0.18s;
+                  }
+                  .lightbox-overlay.active {
+                    opacity: 1;
+                    pointer-events: all;
+                  }
+                  .lightbox-content {
+                    position: relative;
+                    max-width: 90vw;
+                    max-height: 88vh;
+                    box-shadow: 0 4px 32px 2px #0006;
+                    animation: lightbox-in 0.22s cubic-bezier(.36,1.54,.51,.93);
+                  }
+                  .lightbox-content img {
+                    display: block;
+                    max-width: 100%;
+                    max-height: 80vh;
+                    border-radius: 6px;
+                    background: #222;
+                  }
+                  .lightbox-close {
+                    position: absolute;
+                    top: -30px;
+                    right: -30px;
+                    font-size: 2.4rem;
+                    color: #fff;
+                    background: #1a1e22cc;
+                    border: none;
+                    border-radius: 50%;
+                    width: 42px;
+                    height: 42px;
+                    cursor: pointer;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    z-index: 1;
+                    transition: background 0.13s;
+                  }
+                  .lightbox-close:hover {
+                    background: #303840;
+                  }
+                  @keyframes lightbox-in {
+                    from { transform: scale(.91); opacity: 0; }
+                    to { transform: scale(1); opacity: 1; }
+                  }
+                </style>
+                <script>
+                  (function() {
+                    // Only insert one lightbox overlay on the page.
+                    if (!document.getElementById('invome-lightbox-overlay')) {
+                      const overlay = document.createElement('div');
+                      overlay.className = 'lightbox-overlay';
+                      overlay.id = 'invome-lightbox-overlay';
+                      overlay.innerHTML = `
+                        <div class="lightbox-content" tabindex="0">
+                          <button class="lightbox-close" aria-label="Close">&times;</button>
+                          <img src="" alt="Enlarged image">
+                        </div>
+                      `;
+                      document.body.appendChild(overlay);
+
+                      // Lightbox logic
+                      function closeLightbox() {
+                        overlay.classList.remove('active');
+                        setTimeout(() => {
+                          overlay.style.display = 'none'; 
+                          overlay.querySelector('img').src = '';
+                        }, 120);
+                      }
+
+                      overlay.addEventListener('click', function(e) {
+                        if (
+                          e.target === overlay ||
+                          e.target.classList.contains('lightbox-close')
+                        ) {
+                          closeLightbox();
+                        }
+                      });
+
+                      // Esc key closes
+                      document.addEventListener('keydown', function(e) {
+                        if (overlay.classList.contains('active') && e.key === 'Escape') {
+                          closeLightbox();
+                        }
+                      });
+
+                      // Prevent scroll when lightbox is open
+                      overlay.addEventListener('wheel', function(e) {
+                        if (overlay.classList.contains('active')) {
+                          e.preventDefault();
+                        }
+                      }, { passive: false });
+
+                      // Focus for accessibility: set focus to the close button when opened
+                      overlay.lightboxFocus = function() {
+                        overlay.querySelector('.lightbox-close').focus();
+                      };
+                      
+                      // Public open function
+                      overlay.open = function(imgSrc, imgAlt) {
+                        overlay.style.display = 'flex';
+                        overlay.querySelector('img').src = imgSrc;
+                        overlay.querySelector('img').alt = imgAlt || "";
+                        setTimeout(() => {
+                          overlay.classList.add('active');
+                          overlay.lightboxFocus();
+                        }, 0);
+                      };
+
+                      // trap tab focus inside the lightbox
+                      overlay.addEventListener('keydown', function(e) {
+                        const focusable = overlay.querySelectorAll('button, [tabindex]:not([tabindex="-1"])');
+                        if (overlay.classList.contains('active') && e.key === 'Tab') {
+                          const first = focusable[0];
+                          const last = focusable[focusable.length -1];
+                          if (e.shiftKey) { // backwards
+                            if (document.activeElement === first) {
+                              e.preventDefault();
+                              last.focus();
+                            }
+                          } else { // forward
+                            if (document.activeElement === last) {
+                              e.preventDefault();
+                              first.focus();
+                            }
+                          }
+                        }
+                      });
+                    }
+
+                    // Attach event to this frame only
+                    const frame = document.currentScript.previousElementSibling;
+                    const img = frame.querySelector('.lightbox-target');
+                    img.addEventListener('click', function() {
+                      const overlay = document.getElementById('invome-lightbox-overlay');
+                      overlay.open(img.src, img.alt);
+                    });
+                  })();
+                </script>
                 <figcaption>Sitemap — the app's overall structure.</figcaption>
               </figure>
 
