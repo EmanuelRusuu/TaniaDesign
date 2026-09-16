@@ -121,8 +121,54 @@
 
               <figure class="figure">
                 <div class="figure__frame">
-                  <span>Research artifact — User Persona / Customer Journey Map<br><em>(add: assets/img/invome-research.jpg)</em></span>
-                  <img src="../assets/img/invome-research.jpg" alt="User persona and customer journey map for Invome" onerror="this.remove()">
+                  <span>Research artifact — User Persona / Customer Journey Map</span>
+                  <div class="slider" style="display:flex;align-items:center;gap:0.5rem;">
+                    <button type="button" aria-label="Previous" class="slider__prev" style="background:none;border:none;cursor:pointer;font-size:1.5em;">&#8592;</button>
+                    <img src="../assets/img/invome-research.jpg" 
+                         alt="User persona and customer journey map for Invome" 
+                         class="slider__image" 
+                         style="max-width:100%;height:auto;" 
+                         onerror="this.remove()">
+                    <!-- If there's a second image, add it to the images array in JS below -->
+                    <button type="button" aria-label="Next" class="slider__next" style="background:none;border:none;cursor:pointer;font-size:1.5em;">&#8594;</button>
+                  </div>
+                  <script>
+                    (function() {
+                      const images = [
+                        {
+                          src: "../assets/img/invome-research.jpg",
+                          alt: "User persona and customer journey map for Invome"
+                        },
+                        {
+                          src: "../assets/img/invome-research2.jpg",
+                          alt: "Customer journey map for Invome - Alt view"
+                        }
+                      ];
+                      let current = 0;
+                      const imgElem = document.currentScript.previousElementSibling.querySelector('.slider__image');
+                      const prev = document.currentScript.previousElementSibling.querySelector('.slider__prev');
+                      const next = document.currentScript.previousElementSibling.querySelector('.slider__next');
+
+                      function update() {
+                        imgElem.src = images[current].src;
+                        imgElem.alt = images[current].alt;
+                      }
+                      prev.onclick = function() {
+                        current = (current - 1 + images.length) % images.length;
+                        update();
+                      };
+                      next.onclick = function() {
+                        current = (current + 1) % images.length;
+                        update();
+                      };
+                      // If only one image, hide buttons
+                      if(images.length < 2) {
+                        prev.style.display = 'none';
+                        next.style.display = 'none';
+                      }
+                    })();
+                  </script>
+
                 </div>
                 <figcaption>User persona and journey map from the discovery phase.</figcaption>
               </figure>
