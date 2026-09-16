@@ -433,6 +433,36 @@ img, svg { display: block; max-width: 100%; height: auto; }
 }
 /* A real screenshot, when present, covers the fallback caption behind it */
 .figure__frame img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.figure__frame--slider img { object-fit: contain; background: var(--surface); }
+.slider {
+  position: absolute;
+  inset: 0;
+}
+.slider__prev,
+.slider__next {
+  position: absolute;
+  top: 50%;
+  z-index: 2;
+  transform: translateY(-50%);
+  width: 2.5rem;
+  height: 2.5rem;
+  display: grid;
+  place-items: center;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--surface) 88%, transparent);
+  color: var(--text);
+  cursor: pointer;
+  font-size: 1.25rem;
+  line-height: 1;
+}
+.slider__prev { left: 0.75rem; }
+.slider__next { right: 0.75rem; }
+.slider__prev:hover,
+.slider__next:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
 .figure figcaption {
   margin-top: 0.75rem;
   font-size: var(--step--1);
