@@ -195,41 +195,38 @@
                   .lightbox-overlay {
                     position: fixed;
                     z-index: 9999;
-                    top: 0;
-                    left: 0;
-                    width: 100vw;
-                    height: 100vh;
+                    inset: 0;
+                    overflow: auto;
                     background: rgba(30, 32, 38, 0.75);
                     backdrop-filter: blur(3px);
-                    display: flex;
+                    display: none;
                     justify-content: center;
                     align-items: center;
                     opacity: 0;
-                    pointer-events: none;
                     transition: opacity 0.18s;
                   }
                   .lightbox-overlay.active {
+                    display: flex;
                     opacity: 1;
-                    pointer-events: all;
                   }
                   .lightbox-content {
                     position: relative;
-                    max-width: 90vw;
-                    max-height: 88vh;
+                    margin: auto;
                     box-shadow: 0 4px 32px 2px #0006;
                     animation: lightbox-in 0.22s cubic-bezier(.36,1.54,.51,.93);
                   }
                   .lightbox-content img {
                     display: block;
-                    max-width: 100%;
-                    max-height: 80vh;
+                    max-width: none;
+                    width: auto;
+                    height: auto;
                     border-radius: 6px;
                     background: #222;
                   }
                   .lightbox-close {
-                    position: absolute;
-                    top: -30px;
-                    right: -30px;
+                    position: fixed;
+                    top: 1rem;
+                    right: 1rem;
                     font-size: 2.4rem;
                     color: #fff;
                     background: #1a1e22cc;
@@ -292,13 +289,6 @@
                         }
                       });
 
-                      // Prevent scroll when lightbox is open
-                      overlay.addEventListener('wheel', function(e) {
-                        if (overlay.classList.contains('active')) {
-                          e.preventDefault();
-                        }
-                      }, { passive: false });
-
                       // Focus for accessibility: set focus to the close button when opened
                       overlay.lightboxFocus = function() {
                         overlay.querySelector('.lightbox-close').focus();
@@ -336,9 +326,9 @@
                       });
                     }
 
-                    // Attach event to this frame only
-                    const frame = document.currentScript.previousElementSibling;
-                    const img = frame.querySelector('.lightbox-target');
+                    // previousElementSibling is the <style> block, not the frame — bind via the figure
+                    const img = document.currentScript.closest('figure').querySelector('.lightbox-target');
+                    if (!img) return;
                     img.addEventListener('click', function() {
                       const overlay = document.getElementById('invome-lightbox-overlay');
                       overlay.open(img.src, img.alt);
